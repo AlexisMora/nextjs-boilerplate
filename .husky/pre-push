@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run ts:lint ||
+(
+        echo '💥👈 BOOM! 💥👈 
+                TypeScript Lint Check Failed. Make the required changes listed above, add changes and try to commit again.'
+        false;
+)
